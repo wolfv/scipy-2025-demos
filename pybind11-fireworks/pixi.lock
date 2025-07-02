@@ -1,0 +1,31 @@
+version: 6
+environments:
+  default:
+    channels:
+    - url: https://conda.anaconda.org/conda-forge/
+    packages:
+      osx-arm64:
+      - conda: https://conda.anaconda.org/conda-forge/noarch/python_abi-3.11-7_cp311.conda
+      - conda: .
+packages:
+- conda: .
+  name: pybind11-fireworks
+  version: 0.1.0
+  build: py311h43a39b2_0
+  subdir: osx-arm64
+  depends:
+  - python_abi 3.11.* *_cp311
+  input:
+    hash: 499875db7a983db84fc75314194b0ce565bb724bdc57ddcaa4ecdae34326c1e6
+    globs:
+    - pixi.toml
+- conda: https://conda.anaconda.org/conda-forge/noarch/python_abi-3.11-7_cp311.conda
+  build_number: 7
+  sha256: 705d06b15c497b585d235e7e87f6c893ffe5fbfdb3326e376e56c842879e0a09
+  md5: 6320dac78b3b215ceac35858b2cfdb70
+  constrains:
+  - python 3.11.* *_cpython
+  license: BSD-3-Clause
+  license_family: BSD
+  size: 6996
+  timestamp: 1745258878641

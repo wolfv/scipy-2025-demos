@@ -1,0 +1,31 @@
+[workspace]
+authors = ["Wolf Vollprecht <w.vollprecht@gmail.com>"]
+channels = ["conda-forge"]
+name = "pybind11-fireworks"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+preview = ["pixi-build"]
+build-variants = { "python" = ["3.11.*"] }
+
+[tasks]
+start = "python ./example.py"
+
+[dependencies]
+pybind11-fireworks = { path = "." }
+
+[package.build]
+backend = { name = "pixi-build-python", version = "*" }
+channels = [
+    "https://prefix.dev/pixi-build-backends",
+    "https://prefix.dev/conda-forge"
+]
+
+[package.build.configuration]
+noarch = false   # Build platform-specific package. True since we use compilers
+
+[package.build-dependencies]
+cxx-compiler = "*"
+
+[package.host-dependencies]
+pybind11 = "*"
+python = "*"

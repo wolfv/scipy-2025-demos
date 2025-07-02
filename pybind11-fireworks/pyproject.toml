@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=45", "wheel", "pybind11>=2.6.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fireworks_py"
+version = "0.0.1"
+description = "Terminal fireworks and text animation library"
+readme = "README.md"
+authors = [
+    {name = "AI Assistant"}
+]
+license = {text = "MIT"}
+requires-python = ">=3.6"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers", 
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7", 
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: C++",
+]
+dependencies = [
+    "pybind11>=2.6.0"
+]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+# [project.urls]
+# Homepage = ""
+# Repository = ""
+
+[tool.setuptools]
+zip-safe = false
